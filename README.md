@@ -1,8 +1,15 @@
 # The pourpose of this program
 
-createCalculator takes a function strategyFn as an argument (this function defines how to calculate discount or fee).
+this function defines how to calculate discount or fee
+createCalculator takes a function strategyFn as an argument.
 
 # the uses of each code
+
+function createCalculator(strategyFn) {
+  return function(amount) {
+    return strategyFn(amount);
+  };
+}
 
 const percentageDiscount = (percent) => (amount) => amount - (amount * percent / 100); // function percentageDiscount that takes 
                                                                                           a percent value.
